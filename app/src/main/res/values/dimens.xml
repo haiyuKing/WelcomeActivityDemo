@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- *********************************欢迎界面**************************************** -->
+    <!-- 倒计时区域的宽度 -->
+    <dimen name="countdown_width">50dp</dimen>
+    <!-- 倒计时区域的半径（宽度的一半） -->
+    <dimen name="countdown_radius">25dp</dimen>
+    <!-- 倒计时区域的外边距 -->
+    <dimen name="countdown_margin">15dp</dimen>
+    <!-- 倒计时区域的文字大小 -->
+    <dimen name="countdown_text_size">18sp</dimen>
+    
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="rectangle">
+    
+    <!-- 矩形的圆角半径（宽度的一半） -->
+	<corners android:radius="@dimen/countdown_radius"/>
+	
+	<!-- 填充 -->
+	<solid android:color="#E0B3B3B3"/><!-- 填充的颜色 -->
+	<!-- <solid android:color="#e0bdbdbd"/> -->
+
+</shape>
