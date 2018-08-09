@@ -1,10 +1,12 @@
 package com.why.project.welcomeactivitydemo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -54,6 +56,13 @@ public class WelcomActivity extends AppCompatActivity {
 	 * */
 	private void initView(){
 		mCountdownTextView = (TextView) findViewById(R.id.id_countdownTextView);
+		mCountdownTextView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				stopThread();
+				openNextActivity(WelcomActivity.this);//打开下一个界面
+			}
+		});
 	}
 	/**
 	 * 初始化Handler和Runnable
@@ -110,15 +119,12 @@ public class WelcomActivity extends AppCompatActivity {
 							if(timer != null){
 								timer.cancel();//销毁计时器
 							}
-							
-							//跳转到登录界面并销毁当前界面
-							Intent intent = new Intent(theActivity, MainActivity.class);
-							theActivity.startActivity(intent);
-							
-							theActivity.finish();
+
+							openNextActivity(theActivity);//打开下一个界面
+
 							
 						}else{
-							theActivity.mCountdownTextView.setText(msg.arg1 + "S");
+							theActivity.mCountdownTextView.setText("跳过" + msg.arg1 + "s");
 						}
 						break;
 	
@@ -159,16 +165,30 @@ public class WelcomActivity extends AppCompatActivity {
 	protected void onStop() {
 		
 		initCountdownNum();//初始化倒计时的秒数，这样按home键后再次进去欢迎界面，则会重新倒计时
+
+		stopThread();
 		
+		super.onStop();
+	}
+
+	//停止倒计时
+	private void stopThread(){
 		//在这里执行的话，用户点击home键后，不会继续倒计时进入登录界面
 		if(timer != null){
 			timer.cancel();//销毁计时器
 		}
-		
-		//将线程销毁掉 
+
+		//将线程销毁掉
 		countdownHandle.removeCallbacks(runnable);
-		
-		super.onStop();
+	}
+
+	//打开下一个界面
+	private static void openNextActivity(Activity mActivity) {
+		//跳转到登录界面并销毁当前界面
+		Intent intent = new Intent(mActivity, MainActivity.class);
+		mActivity.startActivity(intent);
+
+		mActivity.finish();
 	}
 	
 	@Override

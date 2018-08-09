@@ -6,12 +6,12 @@
 
     <!-- *********************************欢迎界面**************************************** -->
     <!-- 倒计时区域的宽度 -->
-    <dimen name="countdown_width">50dp</dimen>
+    <dimen name="countdown_width">48dp</dimen>
     <!-- 倒计时区域的半径（宽度的一半） -->
-    <dimen name="countdown_radius">25dp</dimen>
+    <dimen name="countdown_radius">24dp</dimen>
     <!-- 倒计时区域的外边距 -->
     <dimen name="countdown_margin">15dp</dimen>
     <!-- 倒计时区域的文字大小 -->
-    <dimen name="countdown_text_size">18sp</dimen>
+    <dimen name="countdown_text_size">12sp</dimen>
     
 </resources>

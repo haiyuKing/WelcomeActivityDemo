@@ -6,7 +6,7 @@
 	<corners android:radius="@dimen/countdown_radius"/>
 	
 	<!-- 填充 -->
-	<solid android:color="#E0B3B3B3"/><!-- 填充的颜色 -->
-	<!-- <solid android:color="#e0bdbdbd"/> -->
+	<solid android:color="#414141"/><!-- 填充的颜色 -->
+	<!-- <solid android:color="#E0B3B3B3"/> -->
 
 </shape>
